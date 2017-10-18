@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Zhuangzhi Li">
+<link rel="stylesheet" href="style.css">
+<title>Movie Recommendation Engine</title>
+</head>
+<style>
+TABLE {
+   border: 1px solid black;
+   border-collapse: collapse;
+   margin: 0 auto;
+}
+TD {
+   border: 1px solid black;
+   padding: 5px;
+   vertical-align: middle;
+}
+TH {
+   border: 1px solid black;
+   padding: 5px;
+}
+TR:nth-child(even) {
+    background-color: #f2f2f2
+}
+INPUT[type=submit] {
+   padding:5px;
+   font-size: large;
+   font-weight: bold;
+   display:block;
+   margin: 0 auto;
+}
+h3 {
+   text-align: center;
+   color: #001A57;
+}
+h1 {
+   text-align: center;
+   color: #000000;
+}
+.titlebar {
+    border: 2px solid #001A57;
+	background-color: lightsteelblue;
+	height: 85px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+</style>
+<body>
+<div class="titlebar">
+  <h1>Recommender Input Form</h1>
+</div>
+<div class="content">
+<p>
+<form name="movie" action="recommenderServlet" method="post">
+Rater ID: <input type="text" name="id">
+<h3>Rate the following movies to create a recommendation profile</h3>
+<div class="lessons">
+<table>
+<tr>
+  <th></th>
+  <th>Movie</th>
+  <th>Rating</th>
+</tr>
+<tr>
+  <td>
+    <a href="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMTQ3MjM3ODU1NV5BMl5BanBnXkFtZTgwMjU3NDU2MTE@._V1_SX300.jpg">
+    <img src="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMTQ3MjM3ODU1NV5BMl5BanBnXkFtZTgwMjU3NDU2MTE@._V1_SX300.jpg" height="50" align="right">
+    </a>
+  </td>
+  <td>
+    1988 &nbsp;&nbsp; <a href="http://www.imdb.com/title/tt0096256/">They Live</a>
+  </td>
+  <td>
+    <input type="radio" name="0096256" value="0" checked>No Rating</input>
+    <input type="radio" name="0096256" value="1">1</input>
+    <input type="radio" name="0096256" value="2">2</input>
+    <input type="radio" name="0096256" value="3">3</input>
+    <input type="radio" name="0096256" value="4">4</input>
+    <input type="radio" name="0096256" value="5">5</input>
+    <input type="radio" name="0096256" value="6">6</input>
+    <input type="radio" name="0096256" value="7">7</input>
+    <input type="radio" name="0096256" value="8">8</input>
+    <input type="radio" name="0096256" value="9">9</input>
+    <input type="radio" name="0096256" value="10">10</input>
+  </td>
+</tr>
+<tr>
+  <td>
+    <a href="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BNDUwMjAxNTU1MF5BMl5BanBnXkFtZTgwMzg4NzMxMDE@._V1_SX300.jpg">
+    <img src="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BNDUwMjAxNTU1MF5BMl5BanBnXkFtZTgwMzg4NzMxMDE@._V1_SX300.jpg" height="50" align="right">
+    </a>
+  </td>
+  <td>
+    1939 &nbsp;&nbsp; <a href="http://www.imdb.com/title/tt0031381/">Gone with the Wind</a>
+  </td>
+  <td>
+    <input type="radio" name="0031381" value="0" checked>No Rating</input>
+    <input type="radio" name="0031381" value="1">1</input>
+    <input type="radio" name="0031381" value="2">2</input>
+    <input type="radio" name="0031381" value="3">3</input>
+    <input type="radio" name="0031381" value="4">4</input>
+    <input type="radio" name="0031381" value="5">5</input>
+    <input type="radio" name="0031381" value="6">6</input>
+    <input type="radio" name="0031381" value="7">7</input>
+    <input type="radio" name="0031381" value="8">8</input>
+    <input type="radio" name="0031381" value="9">9</input>
+    <input type="radio" name="0031381" value="10">10</input>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMjA4Njg1MDcwN15BMl5BanBnXkFtZTYwMzAxNjM3._V1_SX300.jpg">
+    <img src="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMjA4Njg1MDcwN15BMl5BanBnXkFtZTYwMzAxNjM3._V1_SX300.jpg" height="50" align="right">
+    </a>
+  </td>
+  <td>
+    2003 &nbsp;&nbsp; <a href="http://www.imdb.com/title/tt0307987/">Bad Santa</a>
+  </td>
+  <td>
+    <input type="radio" name="0307987" value="0" checked>No Rating</input>
+    <input type="radio" name="0307987" value="1">1</input>
+    <input type="radio" name="0307987" value="2">2</input>
+    <input type="radio" name="0307987" value="3">3</input>
+    <input type="radio" name="0307987" value="4">4</input>
+    <input type="radio" name="0307987" value="5">5</input>
+    <input type="radio" name="0307987" value="6">6</input>
+    <input type="radio" name="0307987" value="7">7</input>
+    <input type="radio" name="0307987" value="8">8</input>
+    <input type="radio" name="0307987" value="9">9</input>
+    <input type="radio" name="0307987" value="10">10</input>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMTQxMTcwMDAyNV5BMl5BanBnXkFtZTcwNzYzNTQ4Nw@@._V1_SX300.jpg">
+    <img src="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMTQxMTcwMDAyNV5BMl5BanBnXkFtZTcwNzYzNTQ4Nw@@._V1_SX300.jpg" height="50" align="right">
+    </a>
+  </td>
+  <td>
+    2011 &nbsp;&nbsp; <a href="http://www.imdb.com/title/tt1568341/">Some Guy Who Kills People</a>
+  </td>
+  <td>
+    <input type="radio" name="1568341" value="0" checked>No Rating</input>
+    <input type="radio" name="1568341" value="1">1</input>
+    <input type="radio" name="1568341" value="2">2</input>
+    <input type="radio" name="1568341" value="3">3</input>
+    <input type="radio" name="1568341" value="4">4</input>
+    <input type="radio" name="1568341" value="5">5</input>
+    <input type="radio" name="1568341" value="6">6</input>
+    <input type="radio" name="1568341" value="7">7</input>
+    <input type="radio" name="1568341" value="8">8</input>
+    <input type="radio" name="1568341" value="9">9</input>
+    <input type="radio" name="1568341" value="10">10</input>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BNTQ5ODU0NjUwOV5BMl5BanBnXkFtZTgwOTcwNDgwNzE@._V1_SX300.jpg">
+    <img src="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BNTQ5ODU0NjUwOV5BMl5BanBnXkFtZTgwOTcwNDgwNzE@._V1_SX300.jpg" height="50" align="right">
+    </a>
+  </td>
+  <td>
+    1982 &nbsp;&nbsp; <a href="http://www.imdb.com/title/tt0084787/">The Thing</a>
+  </td>
+  <td>
+    <input type="radio" name="0084787" value="0" checked>No Rating</input>
+    <input type="radio" name="0084787" value="1">1</input>
+    <input type="radio" name="0084787" value="2">2</input>
+    <input type="radio" name="0084787" value="3">3</input>
+    <input type="radio" name="0084787" value="4">4</input>
+    <input type="radio" name="0084787" value="5">5</input>
+    <input type="radio" name="0084787" value="6">6</input>
+    <input type="radio" name="0084787" value="7">7</input>
+    <input type="radio" name="0084787" value="8">8</input>
+    <input type="radio" name="0084787" value="9">9</input>
+    <input type="radio" name="0084787" value="10">10</input>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMTYyOTM5NzU3Nl5BMl5BanBnXkFtZTgwOTQxNjAxNzE@._V1_SX300.jpg">
+    <img src="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMTYyOTM5NzU3Nl5BMl5BanBnXkFtZTgwOTQxNjAxNzE@._V1_SX300.jpg" height="50" align="right">
+    </a>
+  </td>
+  <td>
+    1992 &nbsp;&nbsp; <a href="http://www.imdb.com/title/tt0103874/">Dracula</a>
+  </td>
+  <td>
+    <input type="radio" name="0103874" value="0" checked>No Rating</input>
+    <input type="radio" name="0103874" value="1">1</input>
+    <input type="radio" name="0103874" value="2">2</input>
+    <input type="radio" name="0103874" value="3">3</input>
+    <input type="radio" name="0103874" value="4">4</input>
+    <input type="radio" name="0103874" value="5">5</input>
+    <input type="radio" name="0103874" value="6">6</input>
+    <input type="radio" name="0103874" value="7">7</input>
+    <input type="radio" name="0103874" value="8">8</input>
+    <input type="radio" name="0103874" value="9">9</input>
+    <input type="radio" name="0103874" value="10">10</input>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMjE4Mjc2NjAyMl5BMl5BanBnXkFtZTcwNzA3MzE2OA@@._V1_SX300.jpg">
+    <img src="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMjE4Mjc2NjAyMl5BMl5BanBnXkFtZTcwNzA3MzE2OA@@._V1_SX300.jpg" height="50" align="right">
+    </a>
+  </td>
+  <td>
+    2012 &nbsp;&nbsp; <a href="http://www.imdb.com/title/tt0938330/">Silent Hill: Revelation 3D</a>
+  </td>
+  <td>
+    <input type="radio" name="0938330" value="0" checked>No Rating</input>
+    <input type="radio" name="0938330" value="1">1</input>
+    <input type="radio" name="0938330" value="2">2</input>
+    <input type="radio" name="0938330" value="3">3</input>
+    <input type="radio" name="0938330" value="4">4</input>
+    <input type="radio" name="0938330" value="5">5</input>
+    <input type="radio" name="0938330" value="6">6</input>
+    <input type="radio" name="0938330" value="7">7</input>
+    <input type="radio" name="0938330" value="8">8</input>
+    <input type="radio" name="0938330" value="9">9</input>
+    <input type="radio" name="0938330" value="10">10</input>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMTY5NTAzNTc1NF5BMl5BanBnXkFtZTYwNDY4MDc3._V1_SX300.jpg">
+    <img src="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMTY5NTAzNTc1NF5BMl5BanBnXkFtZTYwNDY4MDc3._V1_SX300.jpg" height="50" align="right">
+    </a>
+  </td>
+  <td>
+    2005 &nbsp;&nbsp; <a href="http://www.imdb.com/title/tt0388795/">Brokeback Mountain</a>
+  </td>
+  <td>
+    <input type="radio" name="0388795" value="0" checked>No Rating</input>
+    <input type="radio" name="0388795" value="1">1</input>
+    <input type="radio" name="0388795" value="2">2</input>
+    <input type="radio" name="0388795" value="3">3</input>
+    <input type="radio" name="0388795" value="4">4</input>
+    <input type="radio" name="0388795" value="5">5</input>
+    <input type="radio" name="0388795" value="6">6</input>
+    <input type="radio" name="0388795" value="7">7</input>
+    <input type="radio" name="0388795" value="8">8</input>
+    <input type="radio" name="0388795" value="9">9</input>
+    <input type="radio" name="0388795" value="10">10</input>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMTQ4MDkwOTUyMF5BMl5BanBnXkFtZTcwODMzMTE1OA@@._V1_SX300.jpg">
+    <img src="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMTQ4MDkwOTUyMF5BMl5BanBnXkFtZTcwODMzMTE1OA@@._V1_SX300.jpg" height="50" align="right">
+    </a>
+  </td>
+  <td>
+    2012 &nbsp;&nbsp; <a href="http://www.imdb.com/title/tt2401621/">De Marathon</a>
+  </td>
+  <td>
+    <input type="radio" name="2401621" value="0" checked>No Rating</input>
+    <input type="radio" name="2401621" value="1">1</input>
+    <input type="radio" name="2401621" value="2">2</input>
+    <input type="radio" name="2401621" value="3">3</input>
+    <input type="radio" name="2401621" value="4">4</input>
+    <input type="radio" name="2401621" value="5">5</input>
+    <input type="radio" name="2401621" value="6">6</input>
+    <input type="radio" name="2401621" value="7">7</input>
+    <input type="radio" name="2401621" value="8">8</input>
+    <input type="radio" name="2401621" value="9">9</input>
+    <input type="radio" name="2401621" value="10">10</input>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <a href="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMjAxMDg1NDcxM15BMl5BanBnXkFtZTcwODc3MDg1Mw@@._V1_SX300.jpg">
+    <img src="http://www.dukelearntoprogram.com/capstone/data/ia.media-imdb.com/images/M/MV5BMjAxMDg1NDcxM15BMl5BanBnXkFtZTcwODc3MDg1Mw@@._V1_SX300.jpg" height="50" align="right">
+    </a>
+  </td>
+  <td>
+    2010 &nbsp;&nbsp; <a href="http://www.imdb.com/title/tt1440728/">The American</a>
+  </td>
+  <td>
+    <input type="radio" name="1440728" value="0" checked>No Rating</input>
+    <input type="radio" name="1440728" value="1">1</input>
+    <input type="radio" name="1440728" value="2">2</input>
+    <input type="radio" name="1440728" value="3">3</input>
+    <input type="radio" name="1440728" value="4">4</input>
+    <input type="radio" name="1440728" value="5">5</input>
+    <input type="radio" name="1440728" value="6">6</input>
+    <input type="radio" name="1440728" value="7">7</input>
+    <input type="radio" name="1440728" value="8">8</input>
+    <input type="radio" name="1440728" value="9">9</input>
+    <input type="radio" name="1440728" value="10">10</input>
+  </td>
+</tr>
+</table>
+</div>
+<input type="submit" value="Submit Ratings">
+</form>
+</p>
+</div>
+<div class="footer">
+<p>
+&copy 2017 Zhuangzhi Li
+</p>
+</div>
+</body>
+</html>
