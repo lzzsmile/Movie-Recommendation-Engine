@@ -8,3 +8,13 @@ similarity to low similarity. Set a number X to represent the minimal similar ra
 and if a movie has a number of top similar raters which is larger than X, this movie will be 
 recommended to the current rater.
 
+############
+The Recommender Webpage:
+![ScreenShot](https://github.com/lzzsmile/Movie-Recommendation-Engine/blob/master/image/Recommender.JPG)
+
+
+
+############
+Results returned to the current rater:
+![ScreenShot](https://github.com/lzzsmile/Movie-Recommendation-Engine/blob/master/image/Result.JPG)
+
