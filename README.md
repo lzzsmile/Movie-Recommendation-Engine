@@ -1,6 +1,6 @@
 # Movie-Recommendation-Engine
 
-Using Eclipse for this web application with Tomcat Server.
+The IDE for this web application is Eclipse, using Java, HTML, and Tomcat Server. 
 
 Search the database, and find raters that share the same interest with the current rater. 
 Assign weight to these raters, i.e. similarity. Sort the list of found raters from high 
